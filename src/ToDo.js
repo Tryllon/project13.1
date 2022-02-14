@@ -1,13 +1,17 @@
-class ToDo {
+import Task from './Task'
+import Form from './Form'
+
+
+export class ToDo {
 
     constructor(storageKey) {
         this.storageKey = storageKey || 'todo'
         this.container = null
-        
+
         this.tasks = this.loadTasks() || []
     }
 
-    loadTasks(){
+    loadTasks() {
         return JSON.parse(localStorage.getItem(this.storageKey))
     }
 
@@ -74,3 +78,4 @@ class ToDo {
     }
 
 }
+export default ToDo
